@@ -1,0 +1,42 @@
+{% extends 'ticket/base.html' %}
+
+{% block content %}
+
+<table class="table table-hover" id="ticket-detail">
+    <thead>
+        <tr>
+            <th>Ticket {{ticket.pk}} description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Ticket Number:</td>
+            <td>{{ ticket.pk }}</td>
+        </tr>
+            <td>Application:</td>
+            <td>{{ ticket.application }}</td>
+        </tr>
+            <td>Title:</td>
+            <td>{{ ticket.title }}</td>
+        </tr>
+            <td>Full ticket's description:</td>
+            <td>{{ ticket.description }}</td>
+        </tr>
+            <td>Author:</td>
+            <td>{{ ticket.author }}</td>
+        </tr>
+            <td>Published date:</td>
+            <td>{{ ticket.published_date }}</td>
+        </tr>
+            <td>Type of the request: </td>
+            <td>{{ ticket.type }}</td>
+        </tr>
+            <td>Status:</td>
+            <td>{{ ticket.status }}</td>
+        </tr>
+    </tbody>
+</table>
+
+{{ ticket.as_table }}
+
+{% endblock content %}

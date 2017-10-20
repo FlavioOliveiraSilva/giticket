@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load staticfiles %}
+
+<html>
+    <head>
+        <title>Requests Application</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/ticket.css' %}">
+
+        <style>
+             ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #4E65E6;
+            }
+
+            li {
+            float: left;
+            }
+
+            li a {
+            display: block;
+            color: white;
+            text-align: left;
+            padding: 14px 16px;
+            text-decoration: none;
+            }
+
+            /* Change the link color to #111 (black) on hover */
+            li
+            a:hover {
+            background-color: #82CAFF;
+            }
+            select_application option {
+            width:50 px;
+            }
+
+            table
+            {
+            width: 1000px;
+            table-layout:fixed;
+            }
+
+            td
+            {
+              text-overflow:ellipsis;
+              overflow:hidden;
+             }
+
+        </style>
+    </head>
+
+<body>
+    <ul>
+        <li><a href="{% url 'home' %}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href="{% url 'ticket_new' %}"><span class="glyphicon glyphicon-plus"></span> New Ticket</a></li>
+        <li><a href="{% url 'ticket_overview' %}"><span class="glyphicon glyphicon-list-alt"></span> My Tickets</a></li>
+        <li><a href="{% url 'ticket_process' %}"><span class="glyphicon glyphicon-ok-sign"></span> Approve / Reject tickets</a></li>
+        <li><a href="{% url 'actions' %}"><span class="glyphicon glyphicon-star"></span> Actions</a></li>
+        <li><a href="{% url 'dashboard' %}"><span class="glyphicon glyphicon-stats"></span> Dashboard</a></li>
+        <li style="float:right"><a href="#about" ><span class="glyphicon glyphicon-question-sign"></span> About/Help</a></li>
+        <li style="float:right"><a href="{% url 'user_logout' %}" ><span class="glyphicon glyphicon-log-out"></span> Log-out</a></li>
+        <li style="float:right"><a>You are logged-in as {{ user.username }} </a></li>
+    </ul>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+
+</html>

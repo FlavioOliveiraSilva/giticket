@@ -1,0 +1,57 @@
+{% extends 'ticket/base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<h1>My requests</h1>
+
+<table class="table table-hover" id="ticket-overview">
+    <thead>
+        <tr>
+            <th>Ticket number</th>
+            <th>Application</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Author</th>
+            <th>Published date</th>
+            <th>Type - request</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for individual_ticket in ticket %}
+        <tr>
+            <td><a href="{% url 'ticket_detail' pk=individual_ticket.pk %}">{{ individual_ticket.pk }}</a></td>
+            <td><a href="{% url 'ticket_detail' pk=individual_ticket.pk %}">{{ individual_ticket.application }}</a></td>
+            <td><a href="{% url 'ticket_detail' pk=individual_ticket.pk %}">{{ individual_ticket.title }}</a></td>
+            <td><a href="{% url 'ticket_detail' pk=individual_ticket.pk %}">{{ individual_ticket.description }}</a></td>
+            <td><a href="{% url 'ticket_detail' pk=individual_ticket.pk %}">{{ individual_ticket.author }}</a></td>
+            <td><a href="{% url 'ticket_detail' pk=individual_ticket.pk %}">{{ individual_ticket.published_date }}</a></td>
+            <td><a href="{% url 'ticket_detail' pk=individual_ticket.pk %}">{{ individual_ticket.type }}</a></td>
+            <td><a href="{% url 'ticket_detail' pk=individual_ticket.pk %}">{{ individual_ticket.status }}</a></td>
+
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endif %}
+
+{% endblock %}
+
+
+<!--<p>Overview tickets </p>
+    <div class="tickets">
+        {% if post.published_date %}
+            <div class="date">
+                {{ tickets.published_date }}
+            </div>
+        {% endif %}
+        <h1>{{ ticket.title }}</h1>
+        <p></p>
+        {% if user.is_authenticated %}
+        <p></p>
+        <p>Edit this ticket</p>
+        {% endif %}
+    </div>-->

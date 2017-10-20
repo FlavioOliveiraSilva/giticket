@@ -1,0 +1,21 @@
+{% extends 'ticket/base.html' %}
+
+{% block content %}
+<Title>Home - Ticket system</Title>
+
+<div class="jumbotron">
+  <h1 class="display-3">GITicket</h1>
+  <p class="lead">Under construction - Jubotron</p>
+
+  <hr class="my-4">
+  <p>Please select one of the options below:</p>
+  <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{% url 'ticket_new' %}" role="button" >New Ticket</a>
+        <a class="btn btn-primary btn-lg" href="{% url 'ticket_overview' %}" role="button">View My Tickets</a>
+        <a class="btn btn-primary btn-lg" href="{% url 'ticket_process' %}" role="button">Approve</a>
+        <a class="btn btn-primary btn-lg" href="{% url 'actions' %}" role="button">Actions</a>
+
+  </p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'ticket/base.html' %}
+{% block content %}
+
+<form action="" method="POST" class="post-form">
+    {% csrf_token %}
+    <!--{{ form.as_p }}-->
+<p></p>
+<p><strong> Please write you ticket. Fill all the info below: </strong></p>
+
+<table cellpadding="100" id="ticket-form">
+    <thead>
+    </thead>
+    <tbody>
+        <tr>
+            <td width="200">Title:</td>
+            <td>{{ form.title }}</td>
+        </tr>
+        <tr>
+            <td>Application:</td>
+            <td>{{ form.application }}</td>
+        </tr>
+                <tr>
+            <td>Type of the request: </td>
+            <td>{{ form.type }}</td>
+        </tr>
+        <tr>
+            <td>Full ticket's description:</td>
+            <td>{{ form.description }}</td>
+        </tr>
+
+    </tbody>
+</table>
+    <p></p>
+    <button type="reset" class="btn btn-default">Restart ticket</button>
+    <a class="btn btn-danger" href="{% url 'home' %}" role="button">Cancel Ticket</a>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}

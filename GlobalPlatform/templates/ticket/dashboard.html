@@ -1,0 +1,19 @@
+{% extends 'ticket/base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+
+
+<h1>Dashboard - pie and col graphs - Flot's library</h1>
+
+<p>Graph 1</p>
+<p>{{ pie_chart }}</p>
+<p>Graph 2</p>
+<p>{{ pie_chart2 }}</p>
+
+
+{% endif %}
+
+{% endblock %}

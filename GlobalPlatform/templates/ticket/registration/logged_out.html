@@ -1,0 +1,11 @@
+{% extends 'ticket/base.html' %}
+
+{% block content %}
+
+<h1> You are no longer connected to GITicket </h1>
+<p>Logged out!</p>
+
+<a href="{% url 'login'%}">Click here to login again.</a>
+
+{% endblock %}
+
